@@ -47,7 +47,8 @@ module.exports = (env, argv) => {
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
-                template: './src/Html/Browser.html', // Скармливаем наш HTML-темплейт
+                template: './src/Html/Browser.html',
+                favicon: './src/Common/Images/favicon.png',
             }),
             new WebpackNotifierPlugin({ alwaysNotify: false }),
         ],

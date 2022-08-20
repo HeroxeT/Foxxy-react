@@ -6,8 +6,8 @@ export function RegisterWindow(props: { Submit: FormEventHandler; ClickAuth: For
 
     return (
         <div>
-            <div className='registrationForm'>
-                <div className='titleAuth'>Регистрация</div>
+            <div className='AuthForm'>
+                <div className='title'>Регистрация</div>
                 <form>
                     <TextInput type='text' emptyText='Логин' id='RegLogin' />
                     <TextInput type='email' emptyText='Почта' id='RegMail' />
@@ -17,6 +17,28 @@ export function RegisterWindow(props: { Submit: FormEventHandler; ClickAuth: For
                         <input className='buttonsForForm-button' type='submit' value='Зарегистрироваться'
                                onClick={props.Submit} />
                         <input className='buttonsForForm-button' type='button' value='Авторизация'
+                               onClick={props.ClickAuth} />
+                    </div>
+                </form>
+            </div>
+        </div>
+    )
+}
+
+export function AuthorizationWindow(props: { Submit: FormEventHandler; ClickAuth: FormEventHandler }) {
+    require('./index.styl')
+
+    return (
+        <div>
+            <div className='AuthForm'>
+                <div className='title'>Авторизация</div>
+                <form>
+                    <TextInput type='text' emptyText='Логин' id='AuthLogin' />
+                    <TextInput type='password' emptyText='Пароль' id='AuthPassword' />
+                    <div className='buttonsForForm'>
+                        <input className='buttonsForForm-button' type='submit' value='Войти'
+                               onClick={props.Submit} />
+                        <input className='buttonsForForm-button' type='button' value='Регистрация'
                                onClick={props.ClickAuth} />
                     </div>
                 </form>

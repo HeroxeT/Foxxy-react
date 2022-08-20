@@ -8,6 +8,15 @@ html
   justify-content center
   align-items center
 
+  .logoLogin
+    z-index 3
+    position absolute
+    left: 130px
+    top: 20px
+    transition 0.4s
+    animation startAnimationForLogo 0.9s
+
+
   .blackBackground
     width: 100vw
     height: 100vh
@@ -28,6 +37,7 @@ html
     min-width 370px
     width 23%
     position absolute
+    bottom 100px
     left 100px
     animation startAnimationForLogin 0.3s
 
@@ -38,9 +48,16 @@ html
       transition-timing-function cubic-bezier(.27, -0.51, .73, .18)
 
 
-  @keyframes startAnimationForLogin
-    0%
-      left -1000px
-    100%
-      left 100px
+@keyframes startAnimationForLogin
+  0%
+    left -1000px
+  100%
+    left 100px
 
+@keyframes startAnimationForLogo
+  0%
+    left -1000px
+  60%
+    left -1000px
+  100%
+    left 100px
