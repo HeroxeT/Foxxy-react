@@ -1,0 +1,46 @@
+html
+  overflow hidden
+
+.loginScreen
+  background-color orangeLight
+  color textWhite
+  display flex
+  justify-content center
+  align-items center
+
+  .blackBackground
+    width: 100vw
+    height: 100vh
+    position: absolute
+    left: 0
+    z-index: 1
+    top: 0
+    background-color rgba(0, 0, 0, 0.3)
+
+
+  .videoBackground
+    height 100vh
+    width auto
+
+
+  .flightAuthScreen
+    z-index 3
+    min-width 370px
+    width 23%
+    position absolute
+    left 100px
+    animation startAnimationForLogin 0.3s
+
+    .authorizationScreen
+      width 100%
+      border-radius 10px
+      background-color grayBack
+      transition-timing-function cubic-bezier(.27, -0.51, .73, .18)
+
+
+  @keyframes startAnimationForLogin
+    0%
+      left -1000px
+    100%
+      left 100px
+
