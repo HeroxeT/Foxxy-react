@@ -1,5 +1,5 @@
 
-export function up(element: Node, selector: string): NodeListOf<Node> {
+export function up(element: Node, selector: string): NodeListOf<Element>|null {
     const parent = element.parentNode
     const response = parent.querySelectorAll(selector)
 
@@ -9,5 +9,5 @@ export function up(element: Node, selector: string): NodeListOf<Node> {
     if (parent.parentNode) {
         return up(parent, selector);
     }
-    return new NodeList();
+    return null;
 }
