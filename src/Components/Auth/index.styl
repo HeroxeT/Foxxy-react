@@ -14,7 +14,7 @@ html
     left: 130px
     top: 20px
     transition 0.3s
-    animation startAnimationForLogo 0.9s
+    animation startAnimationForLogo 1.7s
 
 
   .blackBackground
@@ -24,7 +24,7 @@ html
     left: 0
     z-index: 1
     top: 0
-    background-color rgba(0, 0, 0, 0.3)
+    background-color rgba(0, 0, 0, 0.1)
 
 
   .videoBackground
@@ -42,7 +42,7 @@ html
     height 444px
     transition height 0.3s
     overflow hidden
-    animation startAnimationForLogin 0.3s
+    animation startAnimationForLogin 1.3s
 
     .authorizationScreen
       width 100%
@@ -54,13 +54,16 @@ html
 @keyframes startAnimationForLogin
   0%
     left -1000px
+
+  70%
+    left -1000px
   100%
     left 100px
 
 @keyframes startAnimationForLogo
   0%
     left -1000px
-  60%
+  90%
     left -1000px
   100%
     left 100px

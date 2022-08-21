@@ -48,9 +48,8 @@ export function AuthSection() {
 
             <div className='blackBackground'></div>
             <div id='particles-js'>
-                <ParticleBackground/>
+                <ParticleBackground />
             </div>
-            <video className='videoBackground' autoPlay={true} muted={true} loop={true}></video>
         </section>
     )
 }

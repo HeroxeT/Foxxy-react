@@ -13,7 +13,7 @@ export function renderAnimation(isAuthWindow: boolean, event: FormEvent<HTMLForm
 
     authWindow.style.height = `${windowHeight}px`
 
-    function logoAnimatic(bool=true) {
+    function logoAnimatic(bool = true) {
         if (bool && isAuthWindow) {
             logo.style.transform = 'rotate(16deg)'
             setTimeout(() => {

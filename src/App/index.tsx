@@ -1,16 +1,29 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Pages } from 'Components/Routes'
 
-export function App() {
+import { LoaderWindow } from 'Components/Widgets/Loader'
 
-    return (<React.Fragment>
-        <Routes>
-            {
-                Pages.map((page, index) =>
-                    <Route path={page.link} element={<page.component />} key={`section-${page.id}`} />,
-                )
-            }
-        </Routes>
-    </React.Fragment>)
+
+export function App() {
+    const [loading, setLoading] = useState('');
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading('noneVisible')
+        }, 1000);
+    })
+    return (
+        <>
+            <LoaderWindow loading={loading}/>
+            <BrowserRouter>
+                <Routes>
+                    {
+                        Pages.map((page) =>
+                            <Route path={page.link} element={<page.component />} key={`section-${page.id}`} />,
+                        )
+                    }
+                </Routes>
+            </BrowserRouter>
+        </>
+    )
 }

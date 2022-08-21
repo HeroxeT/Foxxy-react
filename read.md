@@ -15,3 +15,5 @@ npm install uglifyjs-webpack-plugin --save-dev)
 6: npm i prettier --save-dev
 
 7: npm i react-particles tsparticles --save
+
+8: npm i react-loader-spinner --save
