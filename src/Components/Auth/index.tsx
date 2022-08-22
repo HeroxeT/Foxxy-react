@@ -1,18 +1,17 @@
 import React, { FormEvent } from 'react'
-import { up } from 'Common/Scripts'
 import logo from 'Common/Images/logo_s_textom_1.png'
 import { AuthorizationWindow, ParticleBackground, RegisterWindow } from 'Components/Auth/Items'
 import { renderAnimation } from 'Components/Auth/viewController'
+import { useNavigate } from 'react-router-dom'
 
 
 export function AuthSection() {
     require('./index.styl')
+    const navigate = useNavigate();
 
     const test = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const item = event.currentTarget as HTMLElement
-        const form = up(item, 'form')
-        console.log(form)
+        navigate('/main/chats')
     }
 
     const [isAuthScreen, changeScreen] = React.useState(false)

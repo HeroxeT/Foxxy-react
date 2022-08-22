@@ -11,12 +11,12 @@ interface Route {
 
 export const Pages: Array<Route> = [
     {
-        link: '/',
+        link: '',
         id: 'auth-screen',
         component: AuthSection,
     },
     {
-        link: '/main',
+        link: 'main/*',
         id: 'Content',
         component: Content,
     },

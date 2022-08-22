@@ -1,9 +1,12 @@
 import React from 'react'
+import { LeftMainPanel } from 'Components/Content/LeftPanel'
+import { RightPanel } from 'Components/Content/RightPanel'
 
 export function Content() {
-    // require('./index.styl')
+    require('./index.styl')
 
-    return <section className="content">
-        <h1>Content page</h1>
+    return <section className="mainScreen">
+        <LeftMainPanel/>
+        <RightPanel />
     </section>
 }
