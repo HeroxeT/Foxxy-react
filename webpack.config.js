@@ -53,6 +53,7 @@ module.exports = (env) => {
             App: path.resolve(__dirname, 'src/App/'),
             Components: path.resolve(__dirname, 'src/Components/'),
             Common: path.resolve(__dirname, 'src/Common/'),
+            Store: path.resolve(__dirname, 'src/Store/'),
         },
     }
 

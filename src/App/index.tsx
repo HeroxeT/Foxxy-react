@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Pages } from 'Components/Routes'
-
 import { LoaderWindow } from 'Components/Widgets/Loader'
 
+import { AppState } from 'Store/Store'
+import { useSelector } from 'react-redux'
 
-export function App() {
-    const [loading, setLoading] = useState('')
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading('noneVisible')
 
-        }, 1000)
-    }, [loading])
+
+function App() {
+    const isWindowLoaded = useSelector((state:AppState) => state.window.isWindowLoaded);
+    console.log(isWindowLoaded);
+
 
     // const loggingUserToken = true
     const isLogging = true
     return (
         <>
-            <LoaderWindow loading={loading} />
+            {
+                !isWindowLoaded ? (<LoaderWindow/>) : null
+            }
             <BrowserRouter>
                 <Routes>
                     {Pages.map(
@@ -44,3 +46,5 @@ export function App() {
         </>
     )
 }
+
+export default App

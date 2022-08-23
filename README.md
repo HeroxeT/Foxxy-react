@@ -13,6 +13,12 @@
     <li>npm i @types/react @types/react-dom @types/react-router-dom --save-dev</li>
 </ul>
 
+<h2>(っ◔◡◔)っ ♥Установка redux и его типов♥</h2>
+<ul>
+    <li>npm i redux react-redux --save</li>
+    <li>npm i @types/redux @types/react-redux npm i @reduxjs/toolkit --save-dev</li>
+</ul>
+
 <h2>(っ◔◡◔)っ ♥Установка готовых компонентов♥</h2>
 <ul>
 <li>npm i react-particles tsparticles react-loader-spinner --save</li>

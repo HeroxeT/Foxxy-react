@@ -3,14 +3,21 @@ import logo from 'Common/Images/logo_s_textom_1.png'
 import { AuthorizationWindow, ParticleBackground, RegisterWindow } from 'Components/Auth/Items'
 import { renderAnimation } from 'Components/Auth/viewController'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { changeWindowLoaded } from 'Store/Reducers/Window'
 
-
-export function AuthSection() {
+function AuthSection() {
     require('./index.styl')
-    const navigate = useNavigate();
 
+    const dispatch = useDispatch();
+
+
+    const navigate = useNavigate();
     const test = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+
+
+        dispatch(changeWindowLoaded(false))
         navigate('/main/chats')
     }
 
@@ -28,7 +35,11 @@ export function AuthSection() {
 
     const logoHeight = (Math.abs(window.innerHeight - 544)) - 60
     return (
-        <section className='loginScreen'>
+        <section className='loginScreen' onLoad={() =>
+            setTimeout(() =>
+                dispatch(changeWindowLoaded(true)),
+                500)
+        }>
             <div className='logoLogin'>
                 <img src={logo} alt='лого' height={logoHeight} />
             </div>
@@ -52,3 +63,5 @@ export function AuthSection() {
         </section>
     )
 }
+
+export default AuthSection

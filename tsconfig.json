@@ -12,6 +12,7 @@
       "App": ["src/App"],
       "Components/*": ["src/Components/*"],
       "Common/*": ["src/Common/*"],
+      "Store/*": ["src/Store/*"],
     }
   },
   "exclude": [

@@ -1,7 +1,7 @@
 import { ComponentType } from 'react'
 
-import { AuthSection } from 'Components/Auth'
-import { Content } from 'Components/Content'
+import AuthSection from 'Components/Auth'
+import Content from 'Components/Content'
 
 interface Route {
     link: string
