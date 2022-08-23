@@ -1,22 +1,27 @@
-import React, { useState } from 'react'
+import React from 'react'
 import logoLittle from 'Common/Images/logo.png'
-import { MainPanelRoutes } from 'Components/Content/NavItems'
+import MainPanelRoutes from 'Components/Content/NavItems'
 import { NavLink } from 'react-router-dom'
 import { AnimateLeftPanel } from 'Components/Content/LeftPanel/viewController'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppState } from 'Store/Store'
+import { changeContentWindow } from 'Store/Slices/Window'
 
 
 export function LeftMainPanel() {
     require('./index.styl')
+    const { contentWindowIndex } = useSelector((state: AppState) => state.window)
+    const dispatch = useDispatch()
 
-    const [activeItem, setActiveItem] = useState(1)
     const navLinkOnClick = (index: number, event: any) => {
-        if (index === activeItem) {
+        if (index === contentWindowIndex) {
             return
         }
 
         const item = event.currentTarget as HTMLLIElement
         AnimateLeftPanel(item)
-        setActiveItem(index)
+        dispatch(changeContentWindow(index))
+
     }
 
     const loadLeftPanel = (event: any) => {
@@ -25,7 +30,7 @@ export function LeftMainPanel() {
         const navItems = panel.querySelectorAll('li')
         MainPanelRoutes.forEach((route, index) => {
             if (route.link === currentPath) {
-                setActiveItem(index)
+                dispatch(changeContentWindow(index))
                 AnimateLeftPanel(navItems[index + 1])
             }
         })
@@ -44,7 +49,7 @@ export function LeftMainPanel() {
                                 onClick={(event) => navLinkOnClick(index, event)}>
                                 <NavLink className='superPosLink' to={`/main/${route.link}`}>
                                     <img
-                                        src={index === activeItem ? (route.imageLight) : (route.image)}
+                                        src={index === contentWindowIndex ? (route.imageLight) : (route.image)}
                                         alt={route.id}
                                         width='20'
                                         height='20'

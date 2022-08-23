@@ -17,7 +17,7 @@ interface MainPanelRoute {
     // component: ComponentType<any>
 }
 
-export const MainPanelRoutes: Array<MainPanelRoute> = [
+const MainPanelRoutes: Array<MainPanelRoute> = [
     {
         link: 'user',
         id: 'user',
@@ -44,3 +44,5 @@ export const MainPanelRoutes: Array<MainPanelRoute> = [
         imageLight: settingsL,
     },
 ]
+
+export default MainPanelRoutes

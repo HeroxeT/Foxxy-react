@@ -3,7 +3,7 @@ import React from 'react'
 export function RightPanel() {
     require('./index.styl')
 
-    return(
+    return (
         <div className='rightPanel'>
             ПОМОГИТЕ Я ЗАЕБАЛСЯ
         </div>

@@ -4,24 +4,26 @@ import { AuthorizationWindow, ParticleBackground, RegisterWindow } from 'Compone
 import { renderAnimation } from 'Components/Auth/viewController'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { changeWindowLoaded } from 'Store/Reducers/Window'
+import { changeWindowLoaded } from 'Store/Slices/Window'
+import { authentication } from 'Store/Slices/User'
 
 function AuthSection() {
     require('./index.styl')
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const [isAuthScreen, changeScreen] = React.useState(false)
 
-    const dispatch = useDispatch();
 
-
-    const navigate = useNavigate();
     const test = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
 
+        dispatch(authentication())
         dispatch(changeWindowLoaded(false))
         navigate('/main/chats')
     }
 
-    const [isAuthScreen, changeScreen] = React.useState(false)
+
     const toAuthScreen = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         changeScreen(true)
@@ -37,7 +39,7 @@ function AuthSection() {
     return (
         <section className='loginScreen' onLoad={() =>
             setTimeout(() =>
-                dispatch(changeWindowLoaded(true)),
+                    dispatch(changeWindowLoaded(true)),
                 500)
         }>
             <div className='logoLogin'>
