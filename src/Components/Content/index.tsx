@@ -11,7 +11,7 @@ function Content() {
     require('./index.styl')
     const { isAuth } = useSelector((state: AppState) => state.user)
     const dispatch = useDispatch()
-
+    document.title = 'Foxxy | Main panel'
     return (
         isAuth ? (
             <section className='mainScreen' onLoad={() =>

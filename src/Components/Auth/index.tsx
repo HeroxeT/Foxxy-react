@@ -12,6 +12,7 @@ function AuthSection() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isAuthScreen, changeScreen] = React.useState(false)
+    document.title = 'Foxxy'
 
 
     const test = (event: FormEvent<HTMLFormElement>) => {

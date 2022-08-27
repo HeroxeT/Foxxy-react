@@ -1,0 +1,26 @@
+.chatPanel
+  width 100%
+  height 100vh
+  border-radius 17px 0 0 17px
+  animation animateChatScreen 0.2s
+  background-color blackBack
+
+
+  &-left
+    width calc(20% - 3px)
+    margin-left 3px
+    margin-top 2px
+    border-radius 18px 0 0 18px
+    height calc(100vh - 4px)
+    position relative
+    padding 20px
+    min-width 250px
+    box-sizing border-box
+    background-color grayBack
+
+
+@keyframes animateChatScreen
+  0%
+    margin-left: 50px
+  100%
+    margin-left: 0

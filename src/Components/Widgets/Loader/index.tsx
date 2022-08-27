@@ -12,3 +12,12 @@ export function LoaderWindow() {
         </div>
     )
 }
+
+export function LoaderItem(config:{ width:number, height?:number}) {
+    require('./index.styl')
+    return(
+        <div className='loaderFullBlockItem'>
+            <ThreeCircles width={config.width} height={config.height || config.width} color='#FF7F49'/>
+        </div>
+    )
+}

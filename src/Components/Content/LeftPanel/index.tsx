@@ -25,11 +25,12 @@ export function LeftMainPanel() {
     }
 
     const loadLeftPanel = (event: any) => {
-        const currentPath = location.href.split('/main/')[1]
+        const currentPath = location.pathname.split('/')[2]
+        console.log(currentPath)
         const panel = event.currentTarget as HTMLDivElement
         const navItems = panel.querySelectorAll('li')
         MainPanelRoutes.forEach((route, index) => {
-            if (route.link === currentPath) {
+            if (route.url === currentPath) {
                 dispatch(changeContentWindow(index))
                 AnimateLeftPanel(navItems[index + 1])
             }
@@ -47,7 +48,7 @@ export function LeftMainPanel() {
                     MainPanelRoutes.map((route, index) => (
                             <li className={`navMenu-item ${route.customStyles || ''}`} key={`leftNav-${route.id}`}
                                 onClick={(event) => navLinkOnClick(index, event)}>
-                                <NavLink className='superPosLink' to={`/main/${route.link}`}>
+                                <NavLink className='superPosLink' to={`/main/${route.url}`}>
                                     <img
                                         src={index === contentWindowIndex ? (route.imageLight) : (route.image)}
                                         alt={route.id}
